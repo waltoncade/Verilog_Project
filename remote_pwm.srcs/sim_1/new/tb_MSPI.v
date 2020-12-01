@@ -48,6 +48,10 @@ initial begin
     MISO <= 1'b1;
     @(posedge clock);
     @(posedge clock);
+    data <= 144;
+    repeat (8) begin
+        @(posedge clock);
+    end
     $finish;
 end
 endmodule
