@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../remote_pwm.srcs/sources_1/new/MSPI.v" \
+"../../../../remote_pwm.srcs/sources_1/new/SSPI.v" \
+"../../../../remote_pwm.srcs/sources_1/new/PWM.v" \
+"../../../../remote_pwm.srcs/sim_1/new/tb_PWM.v" \
+"../../../../remote_pwm.srcs/sim_1/new/tb_MSPI.v" \
+"../../../../remote_pwm.srcs/sim_1/new/tb_SSPI.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

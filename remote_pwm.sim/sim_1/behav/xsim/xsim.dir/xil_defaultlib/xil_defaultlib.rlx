@@ -1,0 +1,11 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_MSPI.v,1606810400,verilog,,C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_SSPI.v,,tb_MSPI,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_PWM.v,1603781417,verilog,,C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_MSPI.v,,tb_PWM,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_SSPI.v,1606815949,verilog,,,,tb_SSPI,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sources_1/new/MSPI.v,1606814862,verilog,,C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sources_1/new/SSPI.v,,MSPI,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sources_1/new/PWM.v,1603778435,verilog,,C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sim_1/new/tb_PWM.v,,PWM,,,,,,,,
+C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sources_1/new/SSPI.v,1606815405,verilog,,C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/remote_pwm/remote_pwm.srcs/sources_1/new/PWM.v,,SSPI,,,,,,,,
