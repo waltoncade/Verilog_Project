@@ -3,7 +3,7 @@ module MSPI #(parameter frame = 8)
              input [frame-1:0] DATA,
              input [1:0] SSEL,
              output reg FAULT,
-             output reg [2:0] COUNT,
+             output reg [3:0] COUNT,
              output reg [frame-1:0] RETURN, DATA_SHIFT,
              output MOSI, SLAVE1, SLAVE2, VTRANS);
 
@@ -13,19 +13,19 @@ module MSPI #(parameter frame = 8)
     assign VTRANS = (DATA == RETURN) ? 1'b1 : 1'b0;
     
     always @(posedge SCK) begin           //COUNTING PROCESS
-        if(COUNT == 3'b111) COUNT <= 3'b000;
-        if(RST) COUNT <= 3'b000;
-        if((SLAVE1 || SLAVE2) && ~RST && !VTRANS) begin
+        if(RST || VTRANS || COUNT == 4'b1000) 
+            COUNT <= 4'b0000;
+        else if(SLAVE1 || SLAVE2) begin
             COUNT <= COUNT + 1;
         end
      end
     
-    always @(negedge SCK) begin           //SENDING PROCESS
+    always @(posedge SCK) begin           //SENDING PROCESS
         if(RST) begin
             FAULT <= 1'b0;
-            DATA_SHIFT <= DATA;
+            DATA_SHIFT <= 8'b00000000;
         end
-        if(COUNT == 3'b000) begin
+        if(COUNT == 4'b0000) begin
             DATA_SHIFT <= DATA;
         end
         else if((SLAVE1 || SLAVE2) && ~RST && !VTRANS) begin
@@ -33,13 +33,12 @@ module MSPI #(parameter frame = 8)
         end
      end
      
-    always @(negedge SCK) begin           //RECEIVING PROCESS
+    always @(posedge SCK) begin           //RECEIVING PROCESS
         if(RST) begin
-            RETURN <= (8'b00000000 | MISO);
+            RETURN <= 8'b00000000;
         end
-        else if((SLAVE1 || SLAVE2) && ~RST && !VTRANS) begin
-            if(MISO)
-                RETURN <= RETURN | (1'b1 << COUNT);
+        else if((SLAVE1 || SLAVE2) && !VTRANS) begin
+            RETURN <= {MISO, RETURN[7:1]};
         end
      end
 

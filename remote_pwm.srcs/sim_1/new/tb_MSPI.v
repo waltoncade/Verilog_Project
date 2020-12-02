@@ -10,11 +10,11 @@ wire [frame-1:0] feedback, shift;
 wire verified, MOSI, SLAVE1, SLAVE2, fault;
 
 MSPI #(.frame(frame))
-TSM (.MOSI(MOSI), .SCK(clock), .RST(reset), 
-     .DATA(data), .SSEL(select), .COUNT(counter),
-     .FAULT(fault), .VTRANS(verified),
-     .RETURN(feedback), .DATA_SHIFT(shift),
-     .MISO(MISO), .SLAVE1(SLAVE1), .SLAVE2(SLAVE2));
+Master (.MOSI(MOSI), .SCK(clock), .RST(reset), 
+        .DATA(data), .SSEL(select), .COUNT(counter),
+        .FAULT(fault), .VTRANS(verified),
+        .RETURN(feedback), .DATA_SHIFT(shift),
+        .MISO(MISO), .SLAVE1(SLAVE1), .SLAVE2(SLAVE2));
 
 always begin
    #10 clock <= ~clock;
@@ -27,31 +27,24 @@ initial begin
     reset <= 1'b1;
     MISO <= 1'b1;
     @(posedge clock);
-    select <= 2'b10;
+    select <= 2'b01;
     reset <= 1'b0;
     MISO <= 1'b1;
-    repeat (2) begin
-        @(posedge clock);
-    end
+    repeat (2) @(posedge clock);
     MISO <= 1'b0;
-    repeat (5) begin
-        @(posedge clock);
-    end
+    repeat (5) @(posedge clock);
     MISO <= 1'b1;
-    repeat (3) begin
-        @(posedge clock);
-    end
+    repeat (3) @(posedge clock);
     MISO <= 1'b0;
-    repeat (5) begin
-        @(posedge clock);
-    end
+    data <= 127;
+    MISO <= 1'b0;
+    repeat (2) @(posedge clock);
     MISO <= 1'b1;
-    @(posedge clock);
-    @(posedge clock);
-    data <= 144;
-    repeat (8) begin
-        @(posedge clock);
-    end
+    repeat (5) @(posedge clock);
+    MISO <= 1'b1;
+    repeat (3) @(posedge clock);
+    MISO <= 1'b0;
+    repeat (3) @(posedge clock);
     $finish;
 end
 endmodule

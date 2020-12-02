@@ -24,19 +24,18 @@ initial begin
     @(posedge clock);
     reset <= 1'b0;
     select <= 1'b1;
-    @(posedge clock);
-    repeat (8) begin
-        @(posedge clock);
-    end
-    reset <= 1'b1;
-    @(posedge clock);
-    reset <= 1'b0;
-    repeat (4) begin
-        @(posedge clock);
-    end
-    reset <= 1'b1;
-    @(posedge clock);
-    @(posedge clock);
+    MOSI <= 1'b1;
+    repeat (3) @(posedge clock);
+    MOSI <= 1'b0;
+    repeat (2) @(posedge clock);
+    MOSI <= 1'b1;
+    repeat (2) @(posedge clock);
+    MOSI <= 1'b0;
+    repeat (10) @(posedge clock);
+    select <= 1'b0;
+    repeat (4) @(posedge clock);
+    select <= 1'b1;
+    repeat (7) @(posedge clock);
     $display ("4'b0001 | 4'b0000 = %b", (4'b0001 | 4'b0000));
     $display ("4'b0001 << 1 = %b", (4'b0001 << 1));
     $finish;

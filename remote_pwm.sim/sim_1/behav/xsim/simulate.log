@@ -1,5 +1,3 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
-4'b0001 | 4'b0000 = 0001
-4'b0001 << 1 = 0010
-$finish called at time : 330 ns : File "C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sim_1/new/tb_SSPI.v" Line 42
+$finish called at time : 430 ns : File "C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sim_1/new/tb_MAIN.v" Line 42
