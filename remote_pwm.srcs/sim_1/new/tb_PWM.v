@@ -2,39 +2,37 @@
 module tb_PWM;
 
 parameter resolution = 8;
-reg clock, reset;
-reg [resolution-1:0] duty_cycle;
+reg clock, reset, verify;
+reg [resolution-1:0] data;
 wire signal;
-wire [resolution-1:0] counter;
+wire [resolution-1:0] counter, dc;
 
 PWM #(.res(resolution)) 
-GEN (.SCK(clock), .RST(reset),
-     .DC(duty_cycle), .signal(signal),
-     .COUNT(counter));
+GEN (.SCK(clock), .RST(reset), .VER(verify),
+     .DATA(data), .signal(signal),
+     .COUNT(counter), .DC(dc));
 
-always begin                //create repeat clock
+always begin                        //Repeat clock
    #1 clock <= ~clock;
 end
 
 initial begin
     reset <= 1'b1;
-    clock <= 1'b0;            //initialize clock
-    duty_cycle <= 25;         //set new duty cycle
+    verify <= 1'b0;
+    clock <= 1'b0;
+    data <= 25;                     //Simulated PWM modulation signal coming from slave module
     @(posedge clock);
     reset <= 1'b0;
-    repeat (300) begin       //count 300
-        @(posedge clock);
-    end
+    repeat (50) @(posedge clock);
+    verify <= 1'b1;                 //Simulated verify line to validate input from master
+    repeat (270) @(posedge clock);  //Display one full Duty Cycle period
     reset <= 1'b1;
     @(posedge clock);
     reset <= 1'b0;
-    repeat (50) begin       //count 50
-        @(posedge clock);
-    end
-    duty_cycle <= 100;       //set new duty cycle
-    repeat (300) begin       //count 300
-        @(posedge clock);
-    end
+    repeat (50) @(posedge clock);
+    data <= 100;                    //Modulate signal to show runtime modulation capability
+    verify <= 1'b1;
+    repeat (300) @(posedge clock);
     $finish;
 end
 endmodule

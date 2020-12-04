@@ -1,3 +1,3 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
-$finish called at time : 430 ns : File "C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sim_1/new/tb_MAIN.v" Line 42
+$finish called at time : 1490 ns : File "C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sim_1/new/tb_MAIN.v" Line 66
