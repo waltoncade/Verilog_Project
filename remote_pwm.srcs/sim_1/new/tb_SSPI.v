@@ -32,10 +32,6 @@ initial begin
     repeat (2) @(posedge clock);
     MOSI <= 1'b0;
     repeat (10) @(posedge clock);   //Show one full transmission period
-    select <= 1'b0;
-    repeat (4) @(posedge clock);
-    select <= 1'b1;
-    repeat (7) @(posedge clock);
     $finish;
 end
 endmodule

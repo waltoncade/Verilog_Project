@@ -2,101 +2,35 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Dec  1 17:42:24 2020
-# Process ID: 9428
+# Start of session at: Fri Dec  4 15:01:34 2020
+# Process ID: 13816
 # Current directory: C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19484 C:\Users\walto\Desktop\School\2020-Fall\COMPE-470\Project\Verilog_Project\remote_pwm.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6872 C:\Users\walto\Desktop\School\2020-Fall\COMPE-470\Project\Verilog_Project\remote_pwm.xpr
 # Log file: C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/vivado.log
 # Journal file: C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.xpr
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_MSPI [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
 launch_simulation
-source tb_MAIN.tcl
+source tb_MSPI.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_SSPI [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+source tb_SSPI.tcl
 close_sim
 launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
+source tb_SSPI.tcl
 close_sim
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
@@ -107,33 +41,6 @@ set_property source_mgmt_mode DisplayOnly [current_project]
 launch_simulation
 source tb_PWM.tcl
 close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-launch_simulation
-source tb_PWM.tcl
-close_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_MSPI [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode DisplayOnly [current_project]
-launch_simulation
-source tb_MSPI.tcl
-close_sim
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
 set_property top tb_MAIN [get_filesets sim_1]
@@ -148,51 +55,15 @@ source tb_MAIN.tcl
 close_sim
 launch_simulation
 source tb_MAIN.tcl
+set_property -name {xsim.simulate.runtime} -value {10000ns} -objects [get_filesets sim_1]
 close_sim
 launch_simulation
 source tb_MAIN.tcl
 close_sim
 launch_simulation
 source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_MSPI [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode DisplayOnly [current_project]
-launch_simulation
-source tb_MSPI.tcl
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_MAIN [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode DisplayOnly [current_project]
-close_sim
-launch_simulation
-source tb_MAIN.tcl
-close_sim
-launch_simulation
-source tb_MAIN.tcl
+add_bp {C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sources_1/new/MSPI.v} 34
+remove_bps -file {C:/Users/walto/Desktop/School/2020-Fall/COMPE-470/Project/Verilog_Project/remote_pwm.srcs/sources_1/new/MSPI.v} -line 34
 close_sim
 launch_simulation
 source tb_MAIN.tcl

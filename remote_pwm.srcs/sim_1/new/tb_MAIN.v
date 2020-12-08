@@ -62,7 +62,7 @@ initial begin
     repeat (24) @(posedge clock);   //Need at least two full data frames, 18 clock cycles, to propogate from master to slave and back
     data <= 30;                     //PWM Data to be sent to Slave
     select <= 2'b10;                //Communicating with slave #2
-    repeat (50) @(posedge clock);
+    repeat (600) @(posedge clock);
     $finish;
 end
 
